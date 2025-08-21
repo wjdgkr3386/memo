@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import Home from "./Home";
-import Notes from "./component/Notes";
+import Notes from "./Notes";
 import NoteDetail from "./component/data/NoteDetail";
 import NoteForm from "./component/data/NoteForm";
 import NoteEdit from "./component/data/NoteEdit";
