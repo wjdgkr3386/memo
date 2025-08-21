@@ -1,13 +1,23 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
-function NoteDetail() {
+function NoteDetail({ notes, setNotes }) {
   const { id } = useParams();
-  // 실제로는 Context나 props로 notes를 가져와야 함
+  const navigate = useNavigate();
+  const note = notes.find((n) => n.id === Number(id));
+
+  if (!note) return <p>메모를 찾을 수 없습니다.</p>;
+
+  const handleDelete = () => {
+    setNotes(notes.filter((n) => n.id !== note.id));
+    navigate("/notes"); // 삭제 후 목록으로 이동
+  };
+
   return (
     <div>
-      <h2>메모 상세 페이지</h2>
-      <p>메모 ID: {id}</p>
-      <p>여기에 해당 메모 내용을 표시할 예정입니다.</p>
+      <h2>{note.title}</h2>
+      <p>{note.content}</p>
+      <button onClick={handleDelete}>삭제</button>
+      <button onClick={() => navigate(`/notes/edit/${note.id}`)}>수정</button>
     </div>
   );
 }
