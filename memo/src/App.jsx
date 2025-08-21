@@ -3,7 +3,7 @@ import { useState } from "react";
 import Home from "./Home";
 import Notes from "./Notes";
 import NoteDetail from "./NoteDetail";
-import NoteForm from "./component/data/NoteForm";
+import NoteForm from "./NoteForm";
 import NoteEdit from "./component/data/NoteEdit";
 
 function App() {
