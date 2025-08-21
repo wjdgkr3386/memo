@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
-import Home from "./component/Home";
+import Home from "./Home";
 import Notes from "./component/Notes";
 import NoteDetail from "./component/data/NoteDetail";
 import NoteForm from "./component/data/NoteForm";
