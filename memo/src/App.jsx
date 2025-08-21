@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { useState } from "react"; // Added useState
-import Home from "./component/Home"; // Corrected Home import
-import Notes from "./Notes";
-import NoteDetail from "./NoteDetail";
-import NoteForm from "./NoteForm";
-import NoteEdit from "./component/data/NoteEdit"; // Added NoteEdit import
+import { useState } from "react";
+import Home from "./component/Home";
+import Notes from "./component/Notes";
+import NoteDetail from "./component/data/NoteDetail";
+import NoteForm from "./component/data/NoteForm";
+import NoteEdit from "./component/data/NoteEdit";
 
 function App() {
-  const [notes, setNotes] = useState([ // Added notes state
+  const [notes, setNotes] = useState([
     { id: 1, title: "첫 번째 메모", content: "리액트 라우터 연습" },
     { id: 2, title: "두 번째 메모", content: "Context API 복습" },
   ]);
@@ -22,7 +22,7 @@ function App() {
         <Route path="/notes" element={<Notes notes={notes} setNotes={setNotes} />} />
         <Route path="/notes/:id" element={<NoteDetail notes={notes} setNotes={setNotes} />} />
         <Route path="/new" element={<NoteForm notes={notes} setNotes={setNotes} />} />
-        <Route path="/notes/edit/:id" element={<NoteEdit notes={notes} setNotes={setNotes} />} /> {/* Added NoteEdit route */}
+        <Route path="/notes/edit/:id" element={<NoteEdit notes={notes} setNotes={setNotes} />} />
       </Routes>
     </BrowserRouter>
   );
